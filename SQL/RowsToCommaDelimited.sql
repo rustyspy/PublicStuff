@@ -1,0 +1,7 @@
+DECLARE @Table1 TABLE(ID INT, Value INT);
+INSERT INTO @Table1 VALUES (1,100),(1,200),(1,300),(1,400);
+INSERT INTO @Table1 VALUES (2,10),(2,20),(2,30);
+
+SELECT ID , STRING_AGG([Value], ', ') AS List_Output
+FROM @Table1
+GROUP BY ID;
